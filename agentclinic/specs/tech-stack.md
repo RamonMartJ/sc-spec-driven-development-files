@@ -1,0 +1,44 @@
+# AgentClinic — Tech Stack
+
+This is the **constitution-level** stack: the durable, default technology choices all later specs build on. Choices favor *popular, well-documented, server-side TypeScript* so the app is reliable (Mary), supports a rich dashboard and booking flow (Susan), looks modern in any browser (Steve), and is easy for course students to learn.
+
+## Language
+
+- **TypeScript**, `strict` mode. One language end-to-end (UI, server, data access).
+
+## Framework
+
+- **Next.js (App Router).** Full-stack TypeScript: React UI for the marketing site **and** the staff/agent dashboard, with **route handlers / server actions** for the API — server-side TypeScript without standing up a separate backend.
+- *Why:* the most popular React meta-framework, excellent docs, SSR for fast/attractive pages, and one cohesive codebase that's approachable for learners.
+
+## Database
+
+- **SQLite** — zero-config, file-based. Perfect for demos, teaching, and conference booths; no server to run, and easy to reset or seed.
+- **ORM: Prisma (default recommendation)** — typed client + readable schema + first-class migrations, very beginner-friendly.
+  - *Alternative:* **Drizzle** — lighter, TS-native, closer to SQL; a fine swap for teams who prefer it.
+- *Upgrade path:* the same ORM can point at PostgreSQL later with minimal code change if the project ever outgrows SQLite.
+
+## Styling / UI
+
+- **Tailwind CSS** for a fast, consistent, responsive design system.
+- A simple **component-based** approach (React components, optionally a headless/component library) for an attractive, modern-browser experience.
+
+## Tooling
+
+- **ESLint + Prettier** — consistent, lint-clean code.
+- **Testing (introduced as phases need it):** **Vitest** for unit logic, **Playwright** for end-to-end flows (e.g. booking an appointment).
+- **Package manager:** npm (default; pnpm/yarn acceptable).
+
+## Deployment
+
+- **Local-first for dev:** `next dev` with a local SQLite file.
+- **Target:** any Node host / Vercel-style platform. Keep it deployable but don't over-invest in ops (see mission non-goals).
+
+## How this serves the stakeholders
+
+| Choice | Mary (reliable) | Susan (features) | Steve (attractive) | Students (learnable) |
+|---|---|---|---|---|
+| Next.js | mainstream, supported | dashboard + booking in one app | SSR, polished pages | one cohesive codebase |
+| SQLite + Prisma | predictable, easy to reset | clean model for agents/ailments/therapies/appointments | — | zero-config, typed |
+| Tailwind | — | consistent UI | modern, responsive | quick to style |
+| TypeScript (strict) | fewer runtime bugs | safe data flows | — | learn types in context |
