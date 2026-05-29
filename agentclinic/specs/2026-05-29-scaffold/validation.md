@@ -15,18 +15,21 @@ How we confirm Phase 0 succeeded and is safe to merge.
 | 7 | Tailwind | Utility classes render (styling visibly applied on the home page). |
 | 8 | App Router | App lives under `src/app`; obsolete `src/index.ts` removed. |
 | 9 | `npm test` | Vitest runs and exits 0 (`--passWithNoTests`; no test files yet). |
+| 10 | Responsive | Mobile-first; layout works ~375px → ~1280px+ with no horizontal scroll or clipped content. Viewport meta present. |
 
 ## Manual check
 
 - Open `http://localhost:3000` → see the AgentClinic-themed hello-world page.
 - Page title/description reflect AgentClinic (`mission.md` pitch).
 - Resize to mobile (~375px) and desktop (~1280px) widths — layout stays
-  readable and responsive.
+  readable and responsive, with no horizontal scroll or clipped content at
+  either end. Confirm the page reads mobile-first (base styles target small
+  screens; larger layouts layer on at breakpoints).
 - Keyboard / semantics: headings are real headings; focus order is sane.
 
 ## Merge criteria
 
-- All success criteria (1–9) green.
+- All success criteria (1–10) green.
 - `main` remains runnable after merge (no broken scripts).
 - Changes are isolated to scaffolding; no out-of-scope features added.
 - Open a PR from `phase-0-scaffold` → `main`, including these spec docs

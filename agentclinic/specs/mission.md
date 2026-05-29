@@ -19,7 +19,7 @@ Spec-driven development is best learned on a domain that is *concrete but low-st
 
 - **Reliable** *(Mary, engineering)* — built on a popular, boring, well-supported TypeScript stack; correct, predictable, easy to run.
 - **Feature-complete around the core loop** *(Susan, product)* — agents and their ailments, a therapies catalog, and appointment booking are first-class.
-- **Attractive & modern** *(Steve, marketing)* — a polished, responsive site that looks great in any modern browser.
+- **Attractive & modern** *(Steve, marketing)* — a polished, **fully responsive** site that looks great on any device, from phones to large desktops, in any modern browser.
 
 ## Principles
 
@@ -27,7 +27,8 @@ Spec-driven development is best learned on a domain that is *concrete but low-st
 - **Very small phases** — each phase is demo-able and buildable in roughly one sitting (see `roadmap.md`).
 - **Boring, popular stack** — favor mainstream, well-documented tools over novelty (see `tech-stack.md`).
 - **Always demo-able** — the app should run and show *something* at the end of every phase.
-- **Accessible & responsive** — keyboard-friendly, semantic, mobile-to-desktop by default.
+- **Responsive by default** — every page of the web UI is designed **mobile-first** and must work fluidly across all viewports, from small phones (~375px) to large desktops (~1280px+). This is a first-class requirement of every feature, not a final-phase polish step.
+- **Accessible** — keyboard-friendly, semantic markup, sensible focus order and contrast.
 
 ## Non-goals
 

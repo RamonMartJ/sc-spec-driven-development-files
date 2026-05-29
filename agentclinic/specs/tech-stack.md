@@ -21,6 +21,7 @@ This is the **constitution-level** stack: the durable, default technology choice
 ## Styling / UI
 
 - **Tailwind CSS** for a fast, consistent, responsive design system.
+- **Responsive design is the default and non-negotiable.** Build **mobile-first** (base styles target small screens; Tailwind breakpoints — `sm`/`md`/`lg`/`xl` — layer on larger layouts). Every page must remain readable and usable from ~375px phones to large desktops, with no horizontal scroll or clipped content. The `<meta name="viewport">` is set app-wide. Each feature spec validates its UI at mobile and desktop widths.
 - A simple **component-based** approach (React components, optionally a headless/component library) for an attractive, modern-browser experience.
 
 ## Tooling

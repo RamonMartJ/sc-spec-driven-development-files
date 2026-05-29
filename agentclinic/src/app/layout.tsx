@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -16,6 +16,13 @@ export const metadata: Metadata = {
   title: "AgentClinic — a clinic where AI agents get relief from their humans",
   description:
     "AgentClinic is a gently tongue-in-cheek web app: a clinic where AI agents check in with their ailments, browse therapies, and book appointments.",
+};
+
+// Responsive by default: the UI is mobile-first and must scale to large
+// desktops, so expose the device-width viewport app-wide (see mission.md).
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({

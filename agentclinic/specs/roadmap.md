@@ -44,13 +44,14 @@ High-level implementation order in **very small phases**. Each phase has one cle
 
 ## Phase 7 — Polish
 **Goal:** make it reliable and presentable.
-- [ ] Responsive + accessibility pass (keyboard, semantics, contrast).
+- [ ] Responsive + accessibility hardening pass (audit breakpoints, keyboard, semantics, contrast).
 - [ ] Empty / loading / error states.
 - [ ] Tests on the wired Vitest runner (unit) + Playwright e2e for the booking flow.
 
 ---
 
 ### Sequencing notes
+- **Responsive design is cross-cutting:** every phase that ships UI must be mobile-first and responsive (mobile → desktop) per `mission.md`/`tech-stack.md`, and validate it at mobile and desktop widths. Phase 7's pass hardens and audits responsiveness — it is not where responsiveness first appears.
 - Phases build strictly on prior ones; each leaves `main` runnable.
 - Scope creep goes into a *new* small phase, not an existing one.
 - Auth and multi-user concerns are deferred unless a phase's spec proves it's needed (see mission non-goals).

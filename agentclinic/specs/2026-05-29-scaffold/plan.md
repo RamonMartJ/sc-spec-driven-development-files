@@ -38,8 +38,12 @@ build output) and leave `specs/` untouched.
 
 5.1. Replace `src/app/page.tsx` with an AgentClinic-themed hello-world:
 clear title/tagline from `mission.md`, styled with Tailwind.
-5.2. Use semantic, accessible markup; responsive from mobile to desktop.
-5.3. Set page `metadata` (title/description) in the layout.
+5.2. Build **mobile-first** and responsive — base styles target small screens,
+Tailwind breakpoints (`sm`/`md`/…) layer on larger layouts; no horizontal
+scroll or clipped content from ~375px to large desktops.
+5.3. Use semantic, accessible markup (real landmarks/headings, focus order).
+5.4. Set page `metadata` (title/description) and an app-wide `viewport`
+(`width=device-width, initial-scale=1`) in the layout.
 
 ## 6. Verify
 
@@ -47,4 +51,6 @@ clear title/tagline from `mission.md`, styled with Tailwind.
 6.2. `npm run dev` serves the home page at `http://localhost:3000`.
 6.3. `npm run build`, `npm run lint`, `npm run format:check` all pass.
 6.4. `npm test` runs Vitest and exits 0 (`--passWithNoTests`).
-6.5. Confirm against `validation.md` before opening the PR.
+6.5. Check responsiveness at ~375px and ~1280px — no horizontal scroll or
+clipped content; viewport meta present in the served HTML.
+6.6. Confirm against `validation.md` before opening the PR.
