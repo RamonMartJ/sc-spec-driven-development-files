@@ -1,0 +1,15 @@
+# Build output & dependencies
+.next/
+out/
+build/
+node_modules/
+coverage/
+
+# Lockfiles & generated
+package-lock.json
+next-env.d.ts
+*.tsbuildinfo
+
+# Source-of-truth docs — author-formatted, kept out of Prettier's reach
+specs/
+prompts.md
