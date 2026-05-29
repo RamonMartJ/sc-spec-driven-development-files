@@ -8,6 +8,7 @@ High-level implementation order in **very small phases**. Each phase has one cle
 **Goal:** a running Next.js + TypeScript app you can open in the browser.
 - [ ] Initialize Next.js (App Router) + TypeScript (`strict`).
 - [ ] Add Tailwind CSS, ESLint + Prettier.
+- [ ] Wire Vitest as the validation runner (`npm test`, `--passWithNoTests`).
 - [ ] Hello-world home page; `dev` script runs cleanly.
 
 ## Phase 1 — Data layer
@@ -45,7 +46,7 @@ High-level implementation order in **very small phases**. Each phase has one cle
 **Goal:** make it reliable and presentable.
 - [ ] Responsive + accessibility pass (keyboard, semantics, contrast).
 - [ ] Empty / loading / error states.
-- [ ] Tests (Vitest unit, Playwright e2e for the booking flow).
+- [ ] Tests on the wired Vitest runner (unit) + Playwright e2e for the booking flow.
 
 ---
 

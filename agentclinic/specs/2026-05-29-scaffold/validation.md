@@ -14,6 +14,7 @@ How we confirm Phase 0 succeeded and is safe to merge.
 | 6 | TypeScript | `tsconfig.json` has `"strict": true`; no type errors in build. |
 | 7 | Tailwind | Utility classes render (styling visibly applied on the home page). |
 | 8 | App Router | App lives under `src/app`; obsolete `src/index.ts` removed. |
+| 9 | `npm test` | Vitest runs and exits 0 (`--passWithNoTests`; no test files yet). |
 
 ## Manual check
 
@@ -25,7 +26,7 @@ How we confirm Phase 0 succeeded and is safe to merge.
 
 ## Merge criteria
 
-- All success criteria (1–8) green.
+- All success criteria (1–9) green.
 - `main` remains runnable after merge (no broken scripts).
 - Changes are isolated to scaffolding; no out-of-scope features added.
 - Open a PR from `phase-0-scaffold` → `main`, including these spec docs
@@ -36,4 +37,5 @@ How we confirm Phase 0 succeeded and is safe to merge.
 
 Satisfies `specs/roadmap.md` Phase 0 and upholds `mission.md` principles
 (boring stack, always demo-able, accessible & responsive) and `tech-stack.md`
-choices (Next.js App Router, TypeScript strict, Tailwind, ESLint + Prettier, npm).
+choices (Next.js App Router, TypeScript strict, Tailwind, ESLint + Prettier,
+Vitest for validation, npm).

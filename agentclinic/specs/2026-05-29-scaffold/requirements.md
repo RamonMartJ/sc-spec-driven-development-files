@@ -20,6 +20,8 @@ foundation every later phase builds on, leaving `main` runnable and demo-able.
 - Next.js (**App Router**) + **TypeScript `strict`**.
 - **Tailwind CSS** wired and rendering.
 - **ESLint + Prettier**, lint-clean and consistently formatted.
+- **Vitest** wired as the validation test runner, with an `npm test` script
+  (green via `--passWithNoTests` until a phase adds its first tests).
 - An AgentClinic-themed **hello-world home page**.
 - A clean `dev` script (`next dev`) that runs without errors.
 
@@ -28,7 +30,8 @@ foundation every later phase builds on, leaving `main` runnable and demo-able.
 - Data layer — SQLite + Prisma, models, seed → **Phase 1**.
 - Marketing landing page → **Phase 2**.
 - Agents directory, therapies catalog, booking, dashboard → **Phases 3–6**.
-- Tests (Vitest / Playwright) → introduced when a phase needs them (**Phase 7**).
+- Actual test cases and **Playwright** end-to-end coverage → introduced when a
+  phase needs them (**Phase 7**). Phase 0 only wires the Vitest runner + script.
 - Any authentication / multi-user concerns (per `mission.md` non-goals).
 
 ## Decisions (confirmed)
@@ -39,6 +42,7 @@ foundation every later phase builds on, leaving `main` runnable and demo-able.
 | Package manager | **npm** | Tech-stack default. |
 | App structure | App Router under **`src/app`** | Keep source under `src/`. |
 | TypeScript | `strict` mode | Constitution requirement. |
+| Test runner | **Vitest**, `npm test` script | Validation runner per `tech-stack.md`; wire the harness now, `--passWithNoTests` until tests exist. |
 | Existing files | Reconcile / replace | Replace bare `package.json`, merge `tsconfig.json` (keep `strict`), remove `src/index.ts`; preserve `.gitignore` and `specs/`. |
 
 ## Constraints & principles (from `mission.md`)

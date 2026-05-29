@@ -26,7 +26,8 @@ This is the **constitution-level** stack: the durable, default technology choice
 ## Tooling
 
 - **ESLint + Prettier** — consistent, lint-clean code.
-- **Testing (introduced as phases need it):** **Vitest** for unit logic, **Playwright** for end-to-end flows (e.g. booking an appointment).
+- **Testing — Vitest for validation:** **Vitest** is the default test runner used to *validate* each phase (unit and integration logic), run via an `npm test` script (`vitest run`). **Playwright** covers end-to-end flows (e.g. booking an appointment), added when a phase needs browser coverage.
+  - *Convention:* every phase's validation includes a green `npm test`; the script passes with no test files (`--passWithNoTests`) until a phase introduces its first tests.
 - **Package manager:** npm (default; pnpm/yarn acceptable).
 
 ## Deployment

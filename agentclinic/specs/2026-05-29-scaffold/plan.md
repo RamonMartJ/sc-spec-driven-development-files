@@ -28,16 +28,23 @@ build output) and leave `specs/` untouched.
 3.3. Extend the ESLint config with `prettier` so lint and format don't conflict.
 3.4. Add npm scripts: `lint`, `format` (write), `format:check`.
 
-## 4. AgentClinic hello-world home page
+## 4. Wire Vitest (validation runner)
 
-4.1. Replace `src/app/page.tsx` with an AgentClinic-themed hello-world:
+4.1. Install `vitest` as a dev dependency.
+4.2. Add npm scripts: `test` (`vitest run --passWithNoTests`) and `test:watch`
+(`vitest`). No test files yet — wire the harness now per `tech-stack.md`.
+
+## 5. AgentClinic hello-world home page
+
+5.1. Replace `src/app/page.tsx` with an AgentClinic-themed hello-world:
 clear title/tagline from `mission.md`, styled with Tailwind.
-4.2. Use semantic, accessible markup; responsive from mobile to desktop.
-4.3. Set page `metadata` (title/description) in the layout.
+5.2. Use semantic, accessible markup; responsive from mobile to desktop.
+5.3. Set page `metadata` (title/description) in the layout.
 
-## 5. Verify
+## 6. Verify
 
-5.1. `npm install` runs clean.
-5.2. `npm run dev` serves the home page at `http://localhost:3000`.
-5.3. `npm run build`, `npm run lint`, `npm run format:check` all pass.
-5.4. Confirm against `validation.md` before opening the PR.
+6.1. `npm install` runs clean.
+6.2. `npm run dev` serves the home page at `http://localhost:3000`.
+6.3. `npm run build`, `npm run lint`, `npm run format:check` all pass.
+6.4. `npm test` runs Vitest and exits 0 (`--passWithNoTests`).
+6.5. Confirm against `validation.md` before opening the PR.
