@@ -26,3 +26,14 @@ Add a target audience to the mission:
 ## Prompt 5
 
 In tech stack add that we use SQLite.
+
+## Prompt 6
+Find the next phase on @spec/roadmap.md and make a brach, ask me about the feature spec.
+Create:
+- A new directory YYYY-MM-DD-feature-name under specs for feature work
+- In there:
+- `plan.md`as a serires of numbered task groups.
+- `requirements.md` for the scope, decisions, context.
+- `validation.md` for how the implementation suceeded and can be merged
+
+Refer to @specs/mession.md and @specs/texh-stack.md for guidance.

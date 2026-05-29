@@ -1,0 +1,43 @@
+# Phase 0 — Scaffold · Plan
+
+Numbered task groups for implementing the scaffold. Each group leaves the repo
+in a coherent state; the phase ends with `main` runnable and demo-able.
+
+## 1. Generate the Next.js app
+
+1.1. Run `create-next-app` with: TypeScript, App Router, Tailwind CSS, ESLint,
+`src/` directory, `@/*` import alias, npm.
+1.2. Generate into the existing repo root (use a temp dir + move if the
+generator refuses a non-empty directory).
+
+## 2. Reconcile existing files
+
+2.1. Replace the bare `package.json` with the generated one (keep `name`,
+`private`).
+2.2. Merge `tsconfig.json` — confirm `"strict": true` and the Next.js compiler
+options.
+2.3. Remove the obsolete `src/index.ts`.
+2.4. Preserve `.gitignore` (merge Next.js entries: `.next/`, `node_modules/`,
+build output) and leave `specs/` untouched.
+
+## 3. Add & wire Prettier
+
+3.1. Install `prettier`, `eslint-config-prettier`, and
+`prettier-plugin-tailwindcss`.
+3.2. Add `.prettierrc` and `.prettierignore`.
+3.3. Extend the ESLint config with `prettier` so lint and format don't conflict.
+3.4. Add npm scripts: `lint`, `format` (write), `format:check`.
+
+## 4. AgentClinic hello-world home page
+
+4.1. Replace `src/app/page.tsx` with an AgentClinic-themed hello-world:
+clear title/tagline from `mission.md`, styled with Tailwind.
+4.2. Use semantic, accessible markup; responsive from mobile to desktop.
+4.3. Set page `metadata` (title/description) in the layout.
+
+## 5. Verify
+
+5.1. `npm install` runs clean.
+5.2. `npm run dev` serves the home page at `http://localhost:3000`.
+5.3. `npm run build`, `npm run lint`, `npm run format:check` all pass.
+5.4. Confirm against `validation.md` before opening the PR.
